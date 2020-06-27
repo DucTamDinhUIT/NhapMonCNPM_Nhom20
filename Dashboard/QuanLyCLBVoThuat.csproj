@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\Desktop\HK2\NMCNPM\mysql-connector-net-8.0.20-noinstall\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -97,6 +100,7 @@
     <Compile Include="BM6.Designer.cs">
       <DependentUpon>BM6.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBMySQLUtils.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +113,7 @@
     <Compile Include="DashboardControl.Designer.cs">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BM1.resx">
@@ -145,6 +150,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
