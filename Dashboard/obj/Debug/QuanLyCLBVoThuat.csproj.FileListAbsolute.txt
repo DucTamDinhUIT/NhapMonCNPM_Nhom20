@@ -1,0 +1,16 @@
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\bin\Debug\QuanLyCLBVoThuat.exe.config
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\bin\Debug\QuanLyCLBVoThuat.exe
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\bin\Debug\QuanLyCLBVoThuat.pdb
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM1.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.DangNhap.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.DashboardControl.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.Properties.Resources.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.csproj.GenerateResource.cache
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.csproj.CoreCompileInputs.cache
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.exe
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.pdb
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM2.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM3.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM4.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM5.resources
+C:\Users\DINH DUC TAM\source\repos\NhapMonCNPM\Dashboard\obj\Debug\QuanLyCLBVoThuat.BM6.resources
