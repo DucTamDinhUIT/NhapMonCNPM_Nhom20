@@ -2,3 +2,7 @@
 *.resources
 *.cache
 *.resources
+*.lock
+*.ide
+*.ide-wal
+*.ide-shm
