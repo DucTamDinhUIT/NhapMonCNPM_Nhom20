@@ -15,6 +15,6 @@ lưu trữ  có quy đinh kèm theo =>
 giới hạn của điểm. ()
 tra cứu ## kết xuất cần xử lý
 
-Nhập điểm thi ltru 
+Nhập điểm thi luutru 
 Tìm kiếm danh sách võ sinh tracuu
 Xuất kết quả thi ketxuat
