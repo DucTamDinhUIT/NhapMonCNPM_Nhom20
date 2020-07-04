@@ -26,7 +26,6 @@ namespace QuanLyCLBVoThuat
 
         private void button1_Click(object sender, EventArgs e)
         {
-
                 string stt = textBox6.Text;
                 string tenvosinh = textBox2.Text;
                 string truong = textBox3.Text;
