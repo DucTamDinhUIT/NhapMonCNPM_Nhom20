@@ -19,7 +19,7 @@ namespace QuanLyCLBVoThuat
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            BM1 bm1 = new BM1();
+            SetInfor bm1 = new SetInfor();
             bm1.ShowDialog();
         }
 
