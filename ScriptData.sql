@@ -1,4 +1,4 @@
-CREATE DATABASE QuanLyCLB
+﻿CREATE DATABASE QuanLyCLB
 GO
 
 USE QuanLyCLB
@@ -59,15 +59,29 @@ BEGIN
 END
 GO
 
-CREATE TABLE Infor
+CREATE TABLE Information
 (
-	STT NVARCHAR(100) PRIMARY KEY,	
+	STT NVARCHAR (100) PRIMARY KEY,	
 	TenVoSinh NVARCHAR(100) ,
 	Truong NVARCHAR(1000),
-	SinhNhat NVARCHAR(1000),
-	CapBac NVARCHAR(1000),
-	NgayThamGia NVARCHAR(1000),
+	SinhNhat NVARCHAR(20),
+	CapBac NVARCHAR(20),
+	NgayThamGia NVARCHAR(20),
 	
 )
 GO
 
+INSERT 
+INTO  dbo.Information (STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia) 
+ VALUES ('3', 'Thanh', 'UIT', 'Haiphong', 'trắng','26/8'); 
+ GO
+
+ CREATE PROC Get_Infor
+@STT VARCHAR (100), @TenVoSinh nvarchar(100),  @Truong nvarchar(1000),  @SinhNhat nvarchar(100),  @CapBac nvarchar(20),  @NgayThamGia nvarchar(20)
+AS
+BEGIN
+	SELECT * FROM dbo.Information WHERE STT = @STT AND TenVoSinh = @TenVoSinh
+END
+GO
+
+SELECT * FROM dbo.Information WHERE STT = '2' AND TenVoSinh = 'Thanh'
