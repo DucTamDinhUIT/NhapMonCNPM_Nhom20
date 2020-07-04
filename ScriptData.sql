@@ -59,7 +59,7 @@ BEGIN
 END
 GO
 
-CREATE TABLE Information
+CREATE TABLE VoSinh
 (
 	STT NVARCHAR (100) PRIMARY KEY,	
 	TenVoSinh NVARCHAR(100) ,
@@ -72,15 +72,15 @@ CREATE TABLE Information
 GO
 
 INSERT 
-INTO  dbo.Information (STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia) 
- VALUES ('3', 'Thanh', 'UIT', 'Haiphong', 'trắng','26/8'); 
+INTO  dbo.VoSinh(STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia) 
+ VALUES ('1', 'Thanh', 'UIT', 'Haiphong', 'trắng','26/8'); 
  GO
 
  CREATE PROC Get_Infor
 @STT VARCHAR (100), @TenVoSinh nvarchar(100),  @Truong nvarchar(1000),  @SinhNhat nvarchar(100),  @CapBac nvarchar(20),  @NgayThamGia nvarchar(20)
 AS
 BEGIN
-	SELECT * FROM dbo.Information WHERE STT = @STT AND TenVoSinh = @TenVoSinh
+	SELECT * FROM dbo.VoSinh WHERE TenVoSinh = @TenVoSinh AND CapBac = @CapBac
 END
 GO
 

@@ -28,5 +28,10 @@ namespace QuanLyCLBVoThuat.DAO
 
             return result.Rows.Count > 0;
         }
+
+        internal object TimKiem()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

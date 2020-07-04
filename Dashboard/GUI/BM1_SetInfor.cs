@@ -15,9 +15,9 @@ using QuanLyCLBVoThuat.DTO;
 
 namespace QuanLyCLBVoThuat
 {
-    public partial class SetInfor : Form
+    public partial class BM1_SetInfor : Form
     {
-        public SetInfor()
+        public BM1_SetInfor()
         {
             InitializeComponent();
         }
@@ -30,10 +30,10 @@ namespace QuanLyCLBVoThuat
                 string stt = textBox6.Text;
                 string tenvosinh = textBox2.Text;
                 string truong = textBox3.Text;
-            if (InformationDAO.Instance.InsertInfo(stt, tenvosinh, truong))
+            if (VoSinhDAO.Instance.InsertInfo(stt, tenvosinh, truong))
             {
                 MessageBox.Show("Thêm thành công");
-                            }
+            }
             else
             {
                 MessageBox.Show("Có lỗi khi thêm");

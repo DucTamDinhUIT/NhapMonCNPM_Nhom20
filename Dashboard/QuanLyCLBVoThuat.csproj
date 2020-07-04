@@ -149,9 +149,6 @@
     <Reference Include="Microsoft.SqlServer.SqlEnum, Version=16.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.160.2004021.0\lib\netstandard2.0\Microsoft.SqlServer.SqlEnum.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Desktop\HK2\NMCNPM\mysql-connector-net-8.0.20-noinstall\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -177,83 +174,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SetInfor.cs">
+    <Compile Include="GUI\BM1_SetInfor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetInfor.Designer.cs">
-      <DependentUpon>SetInfor.cs</DependentUpon>
+    <Compile Include="GUI\BM1_SetInfor.Designer.cs">
+      <DependentUpon>BM1_SetInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="BM2.cs">
+    <Compile Include="GUI\BM2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM2.Designer.cs">
+    <Compile Include="GUI\BM2.Designer.cs">
       <DependentUpon>BM2.cs</DependentUpon>
     </Compile>
-    <Compile Include="BM3.cs">
+    <Compile Include="GUI\BM3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM3.Designer.cs">
+    <Compile Include="GUI\BM3.Designer.cs">
       <DependentUpon>BM3.cs</DependentUpon>
     </Compile>
-    <Compile Include="BM4.cs">
+    <Compile Include="GUI\BM4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM4.Designer.cs">
+    <Compile Include="GUI\BM4.Designer.cs">
       <DependentUpon>BM4.cs</DependentUpon>
     </Compile>
-    <Compile Include="BM5.cs">
+    <Compile Include="GUI\BM5_FindInfor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM5.Designer.cs">
-      <DependentUpon>BM5.cs</DependentUpon>
+    <Compile Include="GUI\BM5_FindInfor.Designer.cs">
+      <DependentUpon>BM5_FindInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="BM6.cs">
+    <Compile Include="GUI\BM6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM6.Designer.cs">
+    <Compile Include="GUI\BM6.Designer.cs">
       <DependentUpon>BM6.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DangNhap.cs">
+    <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="GUI\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\InformationDAO.cs" />
-    <Compile Include="DashboardControl.cs">
+    <Compile Include="DAO\VoSinhDAO.cs" />
+    <Compile Include="GUI\DashboardControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashboardControl.Designer.cs">
+    <Compile Include="GUI\DashboardControl.Designer.cs">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Account.cs" />
-    <Compile Include="DTO\Information.cs" />
+    <Compile Include="DTO\VoSinh.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SetInfor.resx">
-      <DependentUpon>SetInfor.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BM1_SetInfor.resx">
+      <DependentUpon>BM1_SetInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BM2.resx">
+    <EmbeddedResource Include="GUI\BM2.resx">
       <DependentUpon>BM2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BM3.resx">
+    <EmbeddedResource Include="GUI\BM3.resx">
       <DependentUpon>BM3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BM4.resx">
+    <EmbeddedResource Include="GUI\BM4.resx">
       <DependentUpon>BM4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BM5.resx">
-      <DependentUpon>BM5.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BM5_FindInfor.resx">
+      <DependentUpon>BM5_FindInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BM6.resx">
+    <EmbeddedResource Include="GUI\BM6.resx">
       <DependentUpon>BM6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashboardControl.resx">
+    <EmbeddedResource Include="GUI\DashboardControl.resx">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

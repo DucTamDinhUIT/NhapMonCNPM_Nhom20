@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCLBVoThuat.DAO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,16 +9,19 @@ using System.Threading.Tasks;
 
 namespace QuanLyCLBVoThuat.DTO
 {
-    public class Information
+    public class VoSinh
     {
-        public Information(string stt, string tenvosinh, string truong)
+        public VoSinh(string stt, string tenvosinh, string truong)
         {
             this.STT = stt;
             this.TenVoSinh = tenvosinh;
             this.Truong = truong;
 
         }
-
+        DataTable TimKiem(string hoTen, string capBac)
+        {
+            return VoSinhDAO.Instance.TimKiem(hoTen, capBac);
+        }
         private string truong;
 
         public string Truong

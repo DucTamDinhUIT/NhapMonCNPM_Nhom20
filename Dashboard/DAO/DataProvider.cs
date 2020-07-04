@@ -21,7 +21,7 @@ namespace QuanLyCLBVoThuat.DAO
         private DataProvider() { }
 
         //private string connectionSTR = "Data Source=.;Initial Catalog=QuanLyCLB;Integrated Security=True";
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyCLB;Integrated Security=True";
+        private readonly string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyCLB;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

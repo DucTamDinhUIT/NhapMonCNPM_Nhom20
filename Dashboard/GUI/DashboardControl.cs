@@ -19,7 +19,7 @@ namespace QuanLyCLBVoThuat
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SetInfor bm1 = new SetInfor();
+            BM1_SetInfor bm1 = new BM1_SetInfor();
             bm1.ShowDialog();
         }
 
@@ -43,7 +43,7 @@ namespace QuanLyCLBVoThuat
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            BM5 bm5 = new BM5();
+            BM5_FindInfor bm5 = new BM5_FindInfor();
             bm5.ShowDialog();
         }
 
