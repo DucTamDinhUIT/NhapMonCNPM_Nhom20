@@ -373,3 +373,11 @@ BEGIN
 	SELECT * FROM dbo.Account WHERE UserName = @userName AND PassWord = @passWord
 END
 GO
+
+CREATE PROC VoSinh_Find
+@voSinhId nvarchar(100), @ten nvarchar(100)
+AS
+BEGIN
+	SELECT * FROM dbo.VoSinh WHERE VoSinhId = @voSinhId AND Ten = @ten
+END
+GO
