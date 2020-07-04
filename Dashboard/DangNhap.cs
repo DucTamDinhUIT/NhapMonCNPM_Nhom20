@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql;
-using MySql.Data.MySqlClient;
 using QuanLyCLBVoThuat.DAO;
 
 namespace QuanLyCLBVoThuat
