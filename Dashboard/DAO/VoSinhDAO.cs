@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Microsoft.SqlServer.Management.Sdk.Sfc;
 
 namespace QuanLyCLBVoThuat.DAO
 {
@@ -16,6 +17,7 @@ namespace QuanLyCLBVoThuat.DAO
             get { if (instance == null) instance = new VoSinhDAO(); return instance; }
             private set { instance = value; }
         }
+
         public bool InsertInfo(string stt, string tenvosinh, string truong)
         {
             string query = string.Format("INSERT INTO dbo.Information ( STT , TenVoSinh , Truong ) VALUES  ( N'{0}' , {1} , {2})" , stt , tenvosinh , truong );
@@ -31,10 +33,11 @@ namespace QuanLyCLBVoThuat.DAO
 
             return result > 0;
         }
-
+        
         public DataTable TimKiem(string hoTen, string capBac)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.VoSinh");
+            string query = string.Format("SELECT * dbo.Information");
+            return DataProvider.Instance.ExecuteQuery(query);
         }
         /*
         public bool DeleteInfo(int idInfo)
