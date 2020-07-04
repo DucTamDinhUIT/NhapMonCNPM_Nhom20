@@ -177,11 +177,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BM1.cs">
+    <Compile Include="SetInfor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BM1.Designer.cs">
-      <DependentUpon>BM1.cs</DependentUpon>
+    <Compile Include="SetInfor.Designer.cs">
+      <DependentUpon>SetInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="BM2.cs">
       <SubType>Form</SubType>
@@ -215,24 +215,25 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DBMySQLUtils.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\InformationDAO.cs" />
     <Compile Include="DashboardControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DashboardControl.Designer.cs">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBUtils.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Information.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BM1.resx">
-      <DependentUpon>BM1.cs</DependentUpon>
+    <EmbeddedResource Include="SetInfor.resx">
+      <DependentUpon>SetInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BM2.resx">
       <DependentUpon>BM2.cs</DependentUpon>
@@ -265,7 +266,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -292,9 +292,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
