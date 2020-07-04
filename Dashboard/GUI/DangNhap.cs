@@ -36,35 +36,7 @@ namespace QuanLyCLBVoThuat
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
-            /*
-            //xac dinh duong dan den database
 
-            //ket noi csdl bang Sqlconnection
-
-            MySqlConnection conn = DBUtils.GetDBConnection();
-
-            try
-            {
-                //Mo ket noi
-                conn.Open();
-            }
-            catch (InvalidOperationException)
-            {
-                //xu ly khi ket noi co van de
-                MessageBox.Show("Khong the mo ket noi hoac ket noi da mo truoc do");
-            }
-            catch (Exception)
-            {
-                //xu ly khi ket noi co van de
-                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
-            }
-            finally
-            {
-                //Dong ket noi sau khi thao tac ket thuc
-                conn.Close();
-            }
-            DashboardControl dashboard = new DashboardControl();
-                dashboard.ShowDialog();*/
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
