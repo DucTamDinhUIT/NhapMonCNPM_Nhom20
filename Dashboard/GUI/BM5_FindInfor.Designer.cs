@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.listView1 = new System.Windows.Forms.ListView();
             this.TenVoSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MaVoSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,12 +38,14 @@
             this.NgayThamGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.capbac1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSet1 = new System.Data.DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -58,7 +60,7 @@
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(12, 74);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeftLayout = true;
@@ -114,20 +116,20 @@
             this.textBox1.Size = new System.Drawing.Size(277, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // comboBox1
+            // capbac1
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.capbac1.AutoCompleteCustomSource.AddRange(new string[] {
             "Tên võ sinh",
             "Mã võ sinh",
             "Trường học",
             "Ngày sinh",
             "Cấp bậc",
             "Ngày tham gia"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(356, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.capbac1.FormattingEnabled = true;
+            this.capbac1.Location = new System.Drawing.Point(356, 29);
+            this.capbac1.Name = "capbac1";
+            this.capbac1.Size = new System.Drawing.Size(121, 21);
+            this.capbac1.TabIndex = 3;
             // 
             // label1
             // 
@@ -164,6 +166,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(303, 214);
             this.dataGridView1.TabIndex = 7;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            // 
             // BM5_FindInfor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,13 +179,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.capbac1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Name = "BM5_FindInfor";
             this.Text = "Tìm kiếm danh sách võ sinh";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,10 +203,11 @@
         private System.Windows.Forms.ColumnHeader NgayThamGia;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox capbac1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Data.DataSet dataSet1;
     }
 }
