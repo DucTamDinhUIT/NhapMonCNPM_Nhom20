@@ -8,5 +8,6 @@ namespace QuanLyCLBVoThuat.DTO
 {
     class Account
     {
+
     }
 }
