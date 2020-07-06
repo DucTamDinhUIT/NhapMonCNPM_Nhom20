@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace QuanLyCLBVoThuat.DAO
         private DataProvider() { }
 
         //private string connectionSTR = "Data Source=.;Initial Catalog=QuanLyCLB;Integrated Security=True";
-        private readonly string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyCLB;Integrated Security=True";
+        private readonly string connectionSTR = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
