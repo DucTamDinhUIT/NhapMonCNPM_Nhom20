@@ -38,15 +38,15 @@ namespace QuanLyCLBVoThuat
             }
 
         }
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-        private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Do you want to close?", "Exit?", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
             {
-                e.Cancel = true;
+                this.Close();
             }
         }
         private void DangNhap_Load(object sender, EventArgs e)
