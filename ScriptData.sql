@@ -4,8 +4,6 @@ GO
 USE QuanLyCLB
 GO
 
-
-
 CREATE TABLE Account
 (
 	UserName NVARCHAR(100) PRIMARY KEY,	
@@ -39,6 +37,34 @@ VALUES  ( N'staff' , -- UserName - nvarchar(100)
         )
 GO
 
+/*==============================================================*/
+/* Table: VoSinh                                                */
+/*==============================================================*/
+CREATE TABLE VoSinh
+(
+	STT INT NOT NULL PRIMARY KEY,	
+	TenVoSinh NVARCHAR(200) ,
+	Truong NVARCHAR(200),
+	SinhNhat NVARCHAR(50),
+	CapBac NVARCHAR(50),
+	NgayThamGia NVARCHAR(50),
+	
+)
+GO
+/*==============================================================*/
+/* Table: BienLai                                                */
+/*==============================================================*/
+CREATE TABLE BienLai
+(
+	MaBienLai INT NOT NULL PRIMARY KEY,	
+	STT INT ,
+	SoTienNop float,
+	NgayThamGia NVARCHAR(20),
+	GhiChu NVARCHAR(100),
+	   FOREIGN KEY (STT)  REFERENCES VoSinh (STT)
+)
+GO
+
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
 AS 
@@ -59,29 +85,40 @@ BEGIN
 END
 GO
 
-CREATE TABLE VoSinh
-(
-	STT NVARCHAR (100) PRIMARY KEY,	
-	TenVoSinh NVARCHAR(100) ,
-	Truong NVARCHAR(1000),
-	SinhNhat NVARCHAR(20),
-	CapBac NVARCHAR(20),
-	NgayThamGia NVARCHAR(20),
-	
-)
-GO
 
 INSERT 
 INTO  dbo.VoSinh(STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia) 
- VALUES ('1', 'Thanh', 'UIT', 'Haiphong', 'trắng','26/8'); 
+ VALUES ('0', 'Duc Tam', 'UIT', 'n/a', 'White','n/a'); 
  GO
 
  CREATE PROC Get_Infor
-@STT VARCHAR (100), @TenVoSinh nvarchar(100),  @Truong nvarchar(1000),  @SinhNhat nvarchar(100),  @CapBac nvarchar(20),  @NgayThamGia nvarchar(20)
+@TenVoSinh nvarchar(100),  @CapBac nvarchar(20)
 AS
 BEGIN
 	SELECT * FROM dbo.VoSinh WHERE TenVoSinh = @TenVoSinh AND CapBac = @CapBac
 END
 GO
 
-SELECT * FROM dbo.Information WHERE STT = '2' AND TenVoSinh = 'Thanh'
+ CREATE PROC VoSinh_Find
+@voSinhId nvarchar(100),  @ten nvarchar(20)
+AS
+BEGIN
+	SELECT * FROM dbo.VoSinh WHERE STT = @voSinhId AND TenVoSinh = @ten
+END
+GO
+
+SELECT * FROM dbo.VoSinh WHERE STT = '2' AND TenVoSinh = 'Thanh'
+GO
+
+ CREATE PROC VoSinh_Insert
+@voSinhId nvarchar(100),  @ten nvarchar(20)
+AS
+BEGIN
+	INSERT 
+	INTO  dbo.VoSinh(STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia) 
+	 VALUES ('4', 'Thanh', 'UIT', 'Haiphong', 'trắng','26/8'); 
+ END
+ GO
+
+SELECT MAX (STT) FROM dbo.VoSinh
+GO
