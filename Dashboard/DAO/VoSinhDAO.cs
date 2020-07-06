@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Microsoft.SqlServer.Management.Sdk.Sfc;
+using QuanLyCLBVoThuat.DTO;
 
 namespace QuanLyCLBVoThuat.DAO
 {
@@ -49,6 +50,23 @@ namespace QuanLyCLBVoThuat.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
+        }
+        
+        public List<VoSinh> GetListVoSinh()
+        {
+            List<VoSinh> list = new List<VoSinh>();
+
+            string query = "select * from VoSinh";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                VoSinh food = new VoSinh(item);
+                list.Add(food);
+            }
+
+            return list;
         }
         */
     }
