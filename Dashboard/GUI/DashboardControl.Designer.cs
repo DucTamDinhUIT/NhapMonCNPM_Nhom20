@@ -38,9 +38,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(413, 300);
+            this.button6.Location = new System.Drawing.Point(444, 266);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(279, 94);
+            this.button6.Size = new System.Drawing.Size(328, 76);
             this.button6.TabIndex = 17;
             this.button6.Text = "Xuất kết quả thi";
             this.button6.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(108, 300);
+            this.button5.Location = new System.Drawing.Point(87, 266);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(269, 94);
+            this.button5.Size = new System.Drawing.Size(313, 76);
             this.button5.TabIndex = 16;
             this.button5.Text = "Tìm kiếm danh sách võ sinh";
             this.button5.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(413, 178);
+            this.button4.Location = new System.Drawing.Point(444, 156);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(279, 94);
+            this.button4.Size = new System.Drawing.Size(328, 76);
             this.button4.TabIndex = 15;
             this.button4.Text = "Nhập điểm thi";
             this.button4.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(108, 178);
+            this.button3.Location = new System.Drawing.Point(87, 156);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(269, 94);
+            this.button3.Size = new System.Drawing.Size(313, 76);
             this.button3.TabIndex = 14;
             this.button3.Text = "Tra cứu thu chi ngân quỹ";
             this.button3.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(413, 57);
+            this.button2.Location = new System.Drawing.Point(444, 49);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(279, 94);
+            this.button2.Size = new System.Drawing.Size(328, 76);
             this.button2.TabIndex = 13;
             this.button2.Text = "Nhập phiếu thu lệ phí";
             this.button2.UseVisualStyleBackColor = true;
@@ -88,9 +93,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(108, 57);
+            this.button1.Location = new System.Drawing.Point(87, 49);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 94);
+            this.button1.Size = new System.Drawing.Size(313, 76);
             this.button1.TabIndex = 12;
             this.button1.Text = "Nhập Thông tin võ sinh";
             this.button1.UseVisualStyleBackColor = true;
@@ -98,15 +104,19 @@
             // 
             // DashboardControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(877, 410);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Maroon;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DashboardControl";
             this.Text = "DashboardControl";
             this.ResumeLayout(false);
