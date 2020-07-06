@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.stt = new System.Windows.Forms.TextBox();
+            this.tenVoSinh = new System.Windows.Forms.TextBox();
+            this.soTien = new System.Windows.Forms.TextBox();
+            this.thang = new System.Windows.Forms.ComboBox();
+            this.Send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,31 +75,31 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Tháng";
             // 
-            // textBox1
+            // stt
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 20);
-            this.textBox1.TabIndex = 4;
+            this.stt.Location = new System.Drawing.Point(12, 136);
+            this.stt.Name = "stt";
+            this.stt.Size = new System.Drawing.Size(70, 20);
+            this.stt.TabIndex = 4;
             // 
-            // textBox2
+            // tenVoSinh
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 20);
-            this.textBox2.TabIndex = 5;
+            this.tenVoSinh.Location = new System.Drawing.Point(119, 136);
+            this.tenVoSinh.Name = "tenVoSinh";
+            this.tenVoSinh.Size = new System.Drawing.Size(195, 20);
+            this.tenVoSinh.TabIndex = 5;
             // 
-            // textBox3
+            // soTien
             // 
-            this.textBox3.Location = new System.Drawing.Point(370, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 20);
-            this.textBox3.TabIndex = 6;
+            this.soTien.Location = new System.Drawing.Point(370, 136);
+            this.soTien.Name = "soTien";
+            this.soTien.Size = new System.Drawing.Size(178, 20);
+            this.soTien.TabIndex = 6;
             // 
-            // comboBox1
+            // thang
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.thang.FormattingEnabled = true;
+            this.thang.Items.AddRange(new object[] {
             "Tháng 1",
             "Tháng 2",
             "Tháng 3",
@@ -112,30 +112,31 @@
             "Tháng 10",
             "Tháng 11",
             "Tháng 12"});
-            this.comboBox1.Location = new System.Drawing.Point(575, 136);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 7;
+            this.thang.Location = new System.Drawing.Point(575, 136);
+            this.thang.Name = "thang";
+            this.thang.Size = new System.Drawing.Size(158, 21);
+            this.thang.TabIndex = 7;
             // 
-            // button1
+            // Send
             // 
-            this.button1.Location = new System.Drawing.Point(480, 324);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 52);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Gửi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Send.Location = new System.Drawing.Point(480, 324);
+            this.Send.Name = "Send";
+            this.Send.Size = new System.Drawing.Size(180, 52);
+            this.Send.TabIndex = 8;
+            this.Send.Text = "Gửi";
+            this.Send.UseVisualStyleBackColor = true;
+            this.Send.Click += new System.EventHandler(this.Send_Click);
             // 
             // BM2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Send);
+            this.Controls.Add(this.thang);
+            this.Controls.Add(this.soTien);
+            this.Controls.Add(this.tenVoSinh);
+            this.Controls.Add(this.stt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -153,10 +154,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox stt;
+        private System.Windows.Forms.TextBox tenVoSinh;
+        private System.Windows.Forms.TextBox soTien;
+        private System.Windows.Forms.ComboBox thang;
+        private System.Windows.Forms.Button Send;
     }
 }
