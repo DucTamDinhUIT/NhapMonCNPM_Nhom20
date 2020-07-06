@@ -54,7 +54,7 @@ namespace QuanLyCLBVoThuat
             bm6.ShowDialog();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Button7_Click(object sender, EventArgs e)
         {
             test bm1 = new test();
             bm1.ShowDialog();
