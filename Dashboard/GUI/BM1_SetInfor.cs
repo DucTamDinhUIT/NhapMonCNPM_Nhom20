@@ -12,8 +12,6 @@ using QuanLyCLBVoThuat.DAO;
 using QuanLyCLBVoThuat.DTO;
 using System.Configuration;
 
-
-
 namespace QuanLyCLBVoThuat
 {
     public partial class BM1_SetInfor : Form
@@ -21,26 +19,44 @@ namespace QuanLyCLBVoThuat
         public BM1_SetInfor()
         {
             InitializeComponent();
+            SoThuTu_load();
         }
+        private void Button_Add(object sender, EventArgs e)
+        {        
+            string stt = soThuTu.Text;
+            string tenvosinh = tenVoSinh.Text;
+            string truong = truongTh.Text;
+            string sinhnhat = sinhNhat.Text;
+            string capbac = capBac.Text;
+            string ngaythamgia = ngayThamGia.Text;
+            /*
+            string query = "INSERT INTO dbo.VoSinh (STT, TenVoSinh, Truong, SinhNhat, CapBac, NgayThamGia)  VALUES(' " + stt + " ', ' " + tenvosinh + " ', '  " + truong + " ', '" + sinhnhat + "', '" + capbac + "', '" + ngaythamgia + "')";
+            DataTable dataTable = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                //string query = "INSERT INTO dbo.VoSinh (STT, TenVoSinh, Truong, SinhNhat, CapBac, NgayThamGia)  VALUES(' " + stt + " ', ' " + tenvosinh + " ', '  " + truong + " ', '" + sinhnhat + "', '" + capbac + "', '" + ngaythamgia + "')";
+                
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    dataTable.Load(reader);
+                };
+            }
+            */
 
-
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            //dataGridView1.DataSource = GetData();
-            
-                string stt = textBox6.Text;
-                string tenvosinh = textBox2.Text;
-                string truong = textBox3.Text;
-            if (VoSinhDAO.Instance.InsertInfo(stt, tenvosinh, truong))
+            if (VoSinhDAO.Instance.InsertInfo( stt , tenvosinh , truong , sinhnhat , capbac , ngaythamgia ))
             {
                 MessageBox.Show("Thêm thành công");
+                SoThuTu_load();
             }
             else
             {
                 MessageBox.Show("Có lỗi khi thêm");
             }
             
+            dataShow.DataSource = GetData();
 
         } 
             private DataTable GetData()
@@ -49,15 +65,53 @@ namespace QuanLyCLBVoThuat
                 string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(connString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh", con))
+                //INSERT INTO dbo.VoSinh(STT, TenVoSinh, Truong, SinhNhat, CapBac, NgayThamGia)  VALUES('3', 'Thanh', 'UIT', 'Haiphong', 'trắng', '26/8');
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh", con))
                     {
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
                         dataTable.Load(reader);
+                        con.Close();
                     };
                 }
                 return dataTable;
             }
-        
+        private void ExitClick_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Do you want to close?", "Exit?", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+        private DataTable SoThuTu_load()
+        {
+
+            string query = "SELECT MAX (STT) FROM dbo.VoSinh";
+            DataTable MaxSTT = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    //MaxSTT.Load(reader);
+                    //string str = reader.ToString();
+                    while (reader.Read())
+                    {
+                        string col1Value = reader[0].ToString();
+                        int max = Int32.Parse(col1Value) + 1;
+                        soThuTu.Text = max.ToString() ;
+                    }
+                    con.Close();
+                };
+            }
+            return MaxSTT;
+
+        }
     }
 }
