@@ -104,7 +104,7 @@ namespace QuanLyCLBVoThuat
             dataVoSinh.DataSource = table;
         }
 
-        private void bShowAll_Click(object sender, EventArgs e)
+        private void BShowAll_Click(object sender, EventArgs e)
         {
             dataVoSinh.DataSource = ShowData();
         }
@@ -115,6 +115,7 @@ namespace QuanLyCLBVoThuat
             string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connString))
             {
+                //using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh INNER JOIN dbo.BienLai ON dbo.VoSinh.STT = dbo.BienLai.STT", con))
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh", con))
                 {
                     con.Open();
