@@ -52,18 +52,49 @@ CREATE TABLE VoSinh
 )
 GO
 /*==============================================================*/
-/* Table: BienLai                                                */
+/* Table: PhieuThu                                               */
 /*==============================================================*/
-CREATE TABLE BienLai
+CREATE TABLE PhieuThu
 (
-	MaBienLai INT NOT NULL PRIMARY KEY,	
-	STT INT ,
+	MaPhieuThu INT NOT NULL PRIMARY KEY,	
+	STT INT NOT NULL ,
 	SoTienNop float,
-	NgayThamGia NVARCHAR(20),
+	NgayThu NVARCHAR(50),
 	GhiChu NVARCHAR(100),
 	   FOREIGN KEY (STT)  REFERENCES VoSinh (STT)
 )
 GO
+/*DROP TABLE dbo.PhieuThu*/
+/*==============================================================*/
+/* Table: PhieuChi                                             */
+/*==============================================================*/
+CREATE TABLE PhieuChi
+(
+	MaPhieuChi INT NOT NULL PRIMARY KEY,	
+	SoTienChi float,
+	NgayChi NVARCHAR(50),
+	NoiDung NVARCHAR(100),
+)
+GO
+
+/*==============================================================*/
+/* Table: DiemThi                                               */
+/*==============================================================*/
+CREATE TABLE DiemThi
+(
+	MaDiemThi INT NOT NULL PRIMARY KEY,	
+	STT INT NOT NULL ,
+	DiemThi float,
+	KetQua NVARCHAR(50),
+	CapBacKeTiep NVARCHAR(50),
+	CapBacHienTai NVARCHAR(50),
+	NgayKiemTra NVARCHAR(50),
+	NguoiKiemTra NVARCHAR(100),
+	GhiChu NVARCHAR(100),
+	   FOREIGN KEY (STT)  REFERENCES VoSinh (STT)
+)
+GO
+
 
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
@@ -120,5 +151,19 @@ BEGIN
  END
  GO
 
-SELECT MAX (STT) FROM dbo.VoSinh
+SELECT TenVoSinh, SoTienNop FROM dbo.VoSinh FULL JOIN dbo.PhieuThu ON dbo.VoSinh.STT = dbo.PhieuThu.STT 
+GO
+
+INSERT 
+INTO  dbo.PhieuThu(MaPhieuThu, STT, SoTienNop, NgayThu, GhiChu ) 
+ VALUES (0, 0, 0, 'n/a', 'n/a'); 
+ GO
+
+SELECT MAX (MaPhieuThu) FROM dbo.PhieuThu
+GO
+
+SELECT * FROM dbo.PhieuThu
+GO
+
+SELECT dbo.VoSinh.STT, dbo.VoSinh.TenVoSinh, dbo.PhieuThu.SoTienNop FROM dbo.VoSinh INNER JOIN dbo.PhieuThu ON dbo.VoSinh.STT = dbo.PhieuThu.STT
 GO
