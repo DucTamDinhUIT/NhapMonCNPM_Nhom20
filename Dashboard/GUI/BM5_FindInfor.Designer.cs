@@ -28,76 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.TenVoSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MaVoSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TruongHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CapBac = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NgayThamGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.capbac1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bShowAll = new System.Windows.Forms.Button();
+            this.dataVoSinh = new System.Windows.Forms.DataGridView();
             this.dataSet1 = new System.Data.DataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVoSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.TenVoSinh,
-            this.MaVoSinh,
-            this.TruongHoc,
-            this.NgaySinh,
-            this.CapBac,
-            this.NgayThamGia});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(12, 74);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(264, 270);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // TenVoSinh
-            // 
-            this.TenVoSinh.Text = "Tên võ sinh";
-            this.TenVoSinh.Width = 120;
-            // 
-            // MaVoSinh
-            // 
-            this.MaVoSinh.Text = "Mã võ sinh";
-            this.MaVoSinh.Width = 102;
-            // 
-            // TruongHoc
-            // 
-            this.TruongHoc.Text = "Trường học";
-            this.TruongHoc.Width = 134;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.Text = "Ngày sinh";
-            this.NgaySinh.Width = 111;
-            // 
-            // CapBac
-            // 
-            this.CapBac.Text = "Cấp bậc";
-            this.CapBac.Width = 121;
-            // 
-            // NgayThamGia
-            // 
-            this.NgayThamGia.Text = "Ngày Tham gia";
-            this.NgayThamGia.Width = 155;
             // 
             // button1
             // 
@@ -149,22 +90,23 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Loại";
             // 
-            // button2
+            // bShowAll
             // 
-            this.button2.Location = new System.Drawing.Point(690, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 26);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Xem tất cả";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bShowAll.Location = new System.Drawing.Point(690, 25);
+            this.bShowAll.Name = "bShowAll";
+            this.bShowAll.Size = new System.Drawing.Size(98, 26);
+            this.bShowAll.TabIndex = 6;
+            this.bShowAll.Text = "Xem tất cả";
+            this.bShowAll.UseVisualStyleBackColor = true;
+            this.bShowAll.Click += new System.EventHandler(this.bShowAll_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(364, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(303, 214);
-            this.dataGridView1.TabIndex = 7;
+            this.dataVoSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVoSinh.Location = new System.Drawing.Point(49, 74);
+            this.dataVoSinh.Name = "dataGridView1";
+            this.dataVoSinh.Size = new System.Drawing.Size(721, 335);
+            this.dataVoSinh.TabIndex = 7;
             // 
             // dataSet1
             // 
@@ -175,17 +117,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataVoSinh);
+            this.Controls.Add(this.bShowAll);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.capbac1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
             this.Name = "BM5_FindInfor";
             this.Text = "Tìm kiếm danh sách võ sinh";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVoSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,21 +134,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
-        public System.Windows.Forms.ColumnHeader MaVoSinh;
-        private System.Windows.Forms.ColumnHeader TenVoSinh;
-        private System.Windows.Forms.ColumnHeader TruongHoc;
-        private System.Windows.Forms.ColumnHeader NgaySinh;
-        private System.Windows.Forms.ColumnHeader CapBac;
-        private System.Windows.Forms.ColumnHeader NgayThamGia;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox capbac1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button bShowAll;
+        private System.Windows.Forms.DataGridView dataVoSinh;
         private System.Data.DataSet dataSet1;
     }
 }
