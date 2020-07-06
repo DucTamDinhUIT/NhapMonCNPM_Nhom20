@@ -27,6 +27,13 @@ namespace QuanLyCLBVoThuat.DAO
 
             return result > 0;
         }
+        public bool InsertPrice(string stt_old, string maphieuthu, string sotiendong, string ngaythu, string ghichu)
+        {
+            //string query = "INSERT INTO dbo.Information ( STT , TenVoSinh , Truong ) VALUES  ( N'{0}' , {1} , {2})" , stt , tenvosinh , truong )";
+            string query = "INSERT dbo.PhieuThu ( STT , MaPhieuThu , SoTienNop , NgayThu , GhiChu )  VALUES('" + stt_old + "',' " + maphieuthu + " ', ' " + sotiendong + " ', '  " + ngaythu + " ', '" + ghichu + "')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
 
         public bool UpdateInfo(string stt, string tenvosinh, string truong)
         {
@@ -57,6 +64,24 @@ namespace QuanLyCLBVoThuat.DAO
             List<VoSinh> list = new List<VoSinh>();
 
             string query = "select * from VoSinh";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                VoSinh food = new VoSinh(item);
+                list.Add(food);
+            }
+
+            return list;
+        }
+        
+        public List<VoSinh> SearchVoSinhByName(string name)
+        {
+
+            List<VoSinh> list = new List<VoSinh>();
+
+            string query = string.Format("SELECT * FROM dbo.VoSinh WHERE dbo.fuConvertToUnsign1(name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
