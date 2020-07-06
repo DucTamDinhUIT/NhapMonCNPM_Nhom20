@@ -45,7 +45,7 @@ namespace QuanLyCLBVoThuat
                 };
             }
             */
-
+            
             if (VoSinhDAO.Instance.InsertInfo( stt , tenvosinh , truong , sinhnhat , capbac , ngaythamgia ))
             {
                 MessageBox.Show("Thêm thành công");
@@ -57,7 +57,7 @@ namespace QuanLyCLBVoThuat
             }
             
             dataShow.DataSource = GetData();
-
+            
         } 
             private DataTable GetData()
             {
@@ -89,7 +89,6 @@ namespace QuanLyCLBVoThuat
         }
         private DataTable SoThuTu_load()
         {
-
             string query = "SELECT MAX (STT) FROM dbo.VoSinh";
             DataTable MaxSTT = new DataTable();
             string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
@@ -111,7 +110,6 @@ namespace QuanLyCLBVoThuat
                 };
             }
             return MaxSTT;
-
         }
     }
 }
