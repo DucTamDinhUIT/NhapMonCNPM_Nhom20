@@ -181,11 +181,11 @@
     <Compile Include="GUI\BM1_SetInfor.Designer.cs">
       <DependentUpon>BM1_SetInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\BM2.cs">
+    <Compile Include="GUI\BM2_InsertPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\BM2.Designer.cs">
-      <DependentUpon>BM2.cs</DependentUpon>
+    <Compile Include="GUI\BM2_InsertPrice.Designer.cs">
+      <DependentUpon>BM2_InsertPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\BM3.cs">
       <SubType>Form</SubType>
@@ -233,8 +233,8 @@
     <EmbeddedResource Include="GUI\BM1_SetInfor.resx">
       <DependentUpon>BM1_SetInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\BM2.resx">
-      <DependentUpon>BM2.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BM2_InsertPrice.resx">
+      <DependentUpon>BM2_InsertPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BM3.resx">
       <DependentUpon>BM3.cs</DependentUpon>
@@ -290,7 +290,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="kisspng-world-taekwondo-martial-arts-desktop-wallpaper-spo-martial-arts-5ac37ed4316d34.6197403015227614282025.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
