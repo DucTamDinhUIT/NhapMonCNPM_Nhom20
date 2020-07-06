@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyCLBVoThuat.DAO;
 using System.Data.SqlClient;
 using System.Configuration;
+using QuanLyCLBVoThuat.DTO;
 
 namespace QuanLyCLBVoThuat
 {
@@ -23,7 +24,15 @@ namespace QuanLyCLBVoThuat
         //string connecSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyCLB;Integrated Security=True";
 
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-7GALQ9H\SQLEXPRESS;Initial Catalog=QuanLyCLB;User ID=sa;Context Connection=True");
-       
+        BindingSource voSinhList = new BindingSource();
+        /*
+        List<VoSinh> SearchVoSinhByName(string name)
+        {
+            List<VoSinh> listVoSinh = VoSinhDAO.Instance.SearchVoSinhByName(name);
+
+            return listVoSinh;
+        }
+        */
         void FindInfor_Load()
         {
             //SqlConnection conn = new SqlConnection(conn);
@@ -48,10 +57,7 @@ namespace QuanLyCLBVoThuat
                     dataVoSinh.Rows.Add(reader.GetString(0), reader.GetBoolean(1),
                                             reader.GetInt32(2), reader.GetInt32(3),
                                             reader.GetInt32(4), reader.GetInt32(5));
-
                 }
-
-
             }
             catch (InvalidOperationException ex)
             {
@@ -68,40 +74,12 @@ namespace QuanLyCLBVoThuat
                 //Dong ket noi sau khi thao tac ket thuc
                 conn.Close();
             }
-
-            /*
-            string query = "SELECT * FROM dbo.VoSinh ";
-            conn.Open();
-            SqlCommand command = new SqlCommand(query, conn);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            //DataTable data = new DataTable();
-
-            //SqlDataAdapter adapter = new SqlDataAdapter(command); 
-
-            //adapter.Fill(data);
-
-            //conn.Close();
-            while (reader.HasRows)//con dong du lieu thi doc tiep
-            {
-                if (reader.Read() == false) return;//doc ko duoc thi return
-                                                   //xu ly khi da doc du lieu len
-                dataGridView1.Rows.Add(reader.GetString(0), reader.GetBoolean(1),
-                                        reader.GetInt32(2), reader.GetInt32(3),
-                                        reader.GetInt32(4), reader.GetInt32(5));
-
-            }
-            conn.Close();
-            //dataGridView1.DataSource = data;
-            */
         }
         private void TimKiem(object sender, EventArgs e)
         {
-            //var dap = new SqlDataAdapter("SELECT * FROM dbo.VoSinh ", conn);
-            var table = new DataTable();
-            //dap.Fill(table);
-            dataVoSinh.DataSource = table;
+            /*
+            voSinhList.DataSource = SearchVoSinhByName(searchText.Text);
+            */
         }
 
         private void BShowAll_Click(object sender, EventArgs e)
@@ -124,6 +102,19 @@ namespace QuanLyCLBVoThuat
                 };
             }
             return dataTable;
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Chức năng chưa được hoàn thiện", "Exit Please", MessageBoxButtons.OK);
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+            dialog = MessageBox.Show("Chức năng chưa được hoàn thiện", "Exit Please", MessageBoxButtons.OK);
         }
     }
 }
