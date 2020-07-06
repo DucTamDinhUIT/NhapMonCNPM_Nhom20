@@ -1,5 +1,4 @@
-﻿using QuanLyCLBVoThuat.GUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,12 +51,6 @@ namespace QuanLyCLBVoThuat
         {
             BM6 bm6 = new BM6();
             bm6.ShowDialog();
-        }
-
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            test bm1 = new test();
-            bm1.ShowDialog();
         }
     }
 }
