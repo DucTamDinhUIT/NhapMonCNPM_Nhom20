@@ -13,11 +13,22 @@ namespace QuanLyCLBVoThuat.DTO
     {
         public VoSinh(string stt, string tenvosinh, string truong)
         {
-            this.STT = stt;
+            this.Stt = stt;
             this.TenVoSinh = tenvosinh;
             this.Truong = truong;
 
         }
+        /*
+        public VoSinh(DataRow row)
+        {
+            //STT,TenVoSinh,Truong,SinhNhat,CapBac,NgayThamGia
+            this.Stt = (int)row["STT"];
+            this.stt = (int)row["id"];
+            this.Name = row["name"].ToString();
+            this.CategoryID = (int)row["idcategory"];
+            this.Price = (float)Convert.ToDouble(row["price"].ToString());
+        }
+        */
         DataTable TimKiem(string hoTen, string capBac)
         {
             return VoSinhDAO.Instance.TimKiem(hoTen, capBac);
@@ -38,6 +49,6 @@ namespace QuanLyCLBVoThuat.DTO
             set { tenvosinh = value; }
         }
 
-        public string STT { get; set; }
+        public string Stt { get; set; }
     }
 }
