@@ -98,7 +98,7 @@
             this.bShowAll.TabIndex = 6;
             this.bShowAll.Text = "Xem tất cả";
             this.bShowAll.UseVisualStyleBackColor = true;
-            this.bShowAll.Click += new System.EventHandler(this.bShowAll_Click);
+            this.bShowAll.Click += new System.EventHandler(this.BShowAll_Click);
             // 
             // dataGridView1
             // 
