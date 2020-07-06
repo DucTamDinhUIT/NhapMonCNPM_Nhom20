@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 using QuanLyCLBVoThuat.DAO;
 using QuanLyCLBVoThuat.DTO;
+using System.Configuration;
+
 
 
 namespace QuanLyCLBVoThuat
@@ -24,8 +25,10 @@ namespace QuanLyCLBVoThuat
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
+            //dataGridView1.DataSource = GetData();
+            
                 string stt = textBox6.Text;
                 string tenvosinh = textBox2.Text;
                 string truong = textBox3.Text;
@@ -37,7 +40,24 @@ namespace QuanLyCLBVoThuat
             {
                 MessageBox.Show("Có lỗi khi thêm");
             }
+            
 
-        }
+        } 
+            private DataTable GetData()
+            {
+                DataTable dataTable = new DataTable();
+                string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh", con))
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        dataTable.Load(reader);
+                    };
+                }
+                return dataTable;
+            }
+        
     }
 }
