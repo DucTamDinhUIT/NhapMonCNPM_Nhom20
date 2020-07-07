@@ -78,6 +78,18 @@ CREATE TABLE PhieuChi
 GO
 
 /*==============================================================*/
+/* Table: PhieuChi                                             */
+/*==============================================================*/
+CREATE TABLE NguoiKiemTra
+(
+	MaSoID INT NOT NULL PRIMARY KEY,	
+	HoTen float,
+	MaPhieuChi int,
+	FOREIGN KEY (MaPhieuChi)  REFERENCES PhieuChi (MaPhieuChi),
+)
+GO
+
+/*==============================================================*/
 /* Table: DiemThi                                               */
 /*==============================================================*/
 CREATE TABLE DiemThi
