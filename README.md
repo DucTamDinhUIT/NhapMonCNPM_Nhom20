@@ -7,7 +7,8 @@ Nhập môn CNPM
 16521229 - Nguyễn Thành Tiến
 15520755 - Đinh Đức Tâm
 
-lưu trữ, tra cứu, kết xuất.
-lưu trữ  có quy đinh kèm theo => 
-giới hạn của điểm. ()
-tra cứu ## kết xuất cần xử lý
+Quản Lý Câu lạc bộ võ thuật.
+Tên đăng nhập: K9
+PassWord: 1
+
+Github: https://github.com/DucTamDinhUIT/NhapMonCNPM
