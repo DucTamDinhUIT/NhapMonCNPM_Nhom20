@@ -31,8 +31,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.phieuThuChi = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuThuChi)).BeginInit();
+            this.phieuThu = new System.Windows.Forms.DataGridView();
+            this.phieuChi = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuThu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuChi)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -51,6 +53,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(381, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
@@ -61,27 +64,38 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Tìm kiếm";
             // 
-            // phieuThuChi
+            // phieuThu
             // 
-            this.phieuThuChi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phieuThuChi.Location = new System.Drawing.Point(27, 73);
-            this.phieuThuChi.Name = "phieuThuChi";
-            this.phieuThuChi.Size = new System.Drawing.Size(729, 358);
-            this.phieuThuChi.TabIndex = 4;
+            this.phieuThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phieuThu.Location = new System.Drawing.Point(27, 73);
+            this.phieuThu.Name = "phieuThu";
+            this.phieuThu.Size = new System.Drawing.Size(729, 173);
+            this.phieuThu.TabIndex = 4;
+            this.phieuThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.phieuThuChi_CellContentClick);
+            // 
+            // phieuChi
+            // 
+            this.phieuChi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phieuChi.Location = new System.Drawing.Point(27, 263);
+            this.phieuChi.Name = "phieuChi";
+            this.phieuChi.Size = new System.Drawing.Size(729, 175);
+            this.phieuChi.TabIndex = 5;
             // 
             // BM3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.phieuThuChi);
+            this.Controls.Add(this.phieuChi);
+            this.Controls.Add(this.phieuThu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "BM3";
             this.Text = "Tra cứu thu chi ngân quỹ";
             this.Load += new System.EventHandler(this.BM3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.phieuThuChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuChi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,6 +105,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView phieuThuChi;
+        private System.Windows.Forms.DataGridView phieuThu;
+        private System.Windows.Forms.DataGridView phieuChi;
     }
 }

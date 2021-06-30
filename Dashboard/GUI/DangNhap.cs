@@ -42,7 +42,7 @@ namespace QuanLyCLBVoThuat
         {
             DialogResult dialog = new DialogResult();
 
-            dialog = MessageBox.Show("Do you want to close?", "Exit?", MessageBoxButtons.YesNo);
+            dialog = MessageBox.Show("Ban muon thoat chuong trinh?", "Exit?", MessageBoxButtons.YesNo);
 
             if (dialog == DialogResult.Yes)
             {

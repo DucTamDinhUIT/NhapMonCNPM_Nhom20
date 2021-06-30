@@ -67,7 +67,7 @@ namespace QuanLyCLBVoThuat.DAO
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
-
+                
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -81,7 +81,7 @@ namespace QuanLyCLBVoThuat.DAO
                         }
                     }
                 }
-
+                
                 data = command.ExecuteNonQuery();
 
                 connection.Close();

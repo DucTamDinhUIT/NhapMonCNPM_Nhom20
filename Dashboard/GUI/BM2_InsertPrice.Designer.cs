@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ghiChu = new System.Windows.Forms.TextBox();
             this.ngayThu = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.XemVoSinh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,22 @@
             this.ngayThu.Size = new System.Drawing.Size(200, 20);
             this.ngayThu.TabIndex = 14;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 425);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 52);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Phiếu chi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BM2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 502);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ngayThu);
             this.Controls.Add(this.ghiChu);
             this.Controls.Add(this.label5);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ghiChu;
         private System.Windows.Forms.DateTimePicker ngayThu;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using QuanLyCLBVoThuat.DAO;
 using QuanLyCLBVoThuat.DTO;
 using System.Configuration;
+using QuanLyCLBVoThuat.GUI;
 
 namespace QuanLyCLBVoThuat
 {
@@ -28,8 +29,7 @@ namespace QuanLyCLBVoThuat
             string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connString))
             {
-                //INSERT INTO dbo.VoSinh(STT, TenVoSinh, Truong, SinhNhat, CapBac, NgayThamGia)  VALUES('3', 'Thanh', 'UIT', 'Haiphong', 'trắng', '26/8');
-                using (SqlCommand cmd = new SqlCommand("SELECT dbo.VoSinh.STT, dbo.VoSinh.TenVoSinh, dbo.PhieuThu.SoTienNop FROM dbo.VoSinh INNER JOIN dbo.PhieuThu ON dbo.VoSinh.STT = dbo.PhieuThu.STT", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT dbo.VoSinh.STT, dbo.VoSinh.TenVoSinh, dbo.PhieuThu.SoTienNop , dbo.PhieuThu.NgayThu, dbo.PhieuThu.GhiChu FROM dbo.VoSinh INNER JOIN dbo.PhieuThu ON dbo.VoSinh.STT = dbo.PhieuThu.STT", con))
                 {
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -109,6 +109,13 @@ namespace QuanLyCLBVoThuat
 
             XemVoSinh.DataSource = GetData();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BM2_ExportPrice bm2exp = new BM2_ExportPrice();
+            bm2exp.ShowDialog();
+        }
+
     }
 
 }

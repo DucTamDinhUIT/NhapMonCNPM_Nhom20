@@ -51,6 +51,7 @@ namespace QuanLyCLBVoThuat
         {
             BM6 bm6 = new BM6();
             bm6.ShowDialog();
+
         }
     }
 }

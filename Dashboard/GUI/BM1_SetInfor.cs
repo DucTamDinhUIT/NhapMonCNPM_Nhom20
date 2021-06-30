@@ -111,5 +111,10 @@ namespace QuanLyCLBVoThuat
             }
             return MaxSTT;
         }
+
+        private void soThuTu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

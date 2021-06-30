@@ -67,6 +67,7 @@
             this.soThuTu.ReadOnly = true;
             this.soThuTu.Size = new System.Drawing.Size(61, 20);
             this.soThuTu.TabIndex = 5;
+            this.soThuTu.TextChanged += new System.EventHandler(this.soThuTu_TextChanged);
             // 
             // label1
             // 

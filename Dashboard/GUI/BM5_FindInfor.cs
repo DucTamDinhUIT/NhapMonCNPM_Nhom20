@@ -25,14 +25,16 @@ namespace QuanLyCLBVoThuat
 
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-7GALQ9H\SQLEXPRESS;Initial Catalog=QuanLyCLB;User ID=sa;Context Connection=True");
         BindingSource voSinhList = new BindingSource();
-        /*
-        List<VoSinh> SearchVoSinhByName(string name)
-        {
-            List<VoSinh> listVoSinh = VoSinhDAO.Instance.SearchVoSinhByName(name);
+        //private SqlCommand cmd;
 
-            return listVoSinh;
-        }
-        */
+        /*
+List<VoSinh> SearchVoSinhByName(string name)
+{
+List<VoSinh> listVoSinh = VoSinhDAO.Instance.SearchVoSinhByName(name);
+
+return listVoSinh;
+}
+*/
         void FindInfor_Load()
         {
             //SqlConnection conn = new SqlConnection(conn);
@@ -77,9 +79,25 @@ namespace QuanLyCLBVoThuat
         }
         private void TimKiem(object sender, EventArgs e)
         {
-            /*
-            voSinhList.DataSource = SearchVoSinhByName(searchText.Text);
-            */
+            dataVoSinh.DataSource = SearchVoSinhByName(searchText.Text);
+
+        }
+
+        private object SearchVoSinhByName(string text)
+        {
+            DataTable dataTable = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                //using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh INNER JOIN dbo.BienLai ON dbo.VoSinh.STT = dbo.BienLai.STT", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.VoSinh WHERE TenVoSinh LIKE '%" + text + "%'", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    dataTable.Load(reader);
+                };
+            }
+            return dataTable;
         }
 
         private void BShowAll_Click(object sender, EventArgs e)
@@ -115,6 +133,85 @@ namespace QuanLyCLBVoThuat
         {
             DialogResult dialog = new DialogResult();
             dialog = MessageBox.Show("Chức năng chưa được hoàn thiện", "Exit Please", MessageBoxButtons.OK);
+        }
+
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataVoSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dataVoSinh.CurrentRow.Index;
+            tb_STT.Text = dataVoSinh.Rows[i].Cells[0].Value.ToString();
+            tb_TenVoSinh.Text = dataVoSinh.Rows[i].Cells[1].Value.ToString();
+            tb_Truong.Text = dataVoSinh.Rows[i].Cells[2].Value.ToString();
+            tb_SinhNhat.Text = dataVoSinh.Rows[i].Cells[3].Value.ToString();
+            tb_CapBac.Text = dataVoSinh.Rows[i].Cells[4].Value.ToString();
+            tb_NgayThamGia.Text = dataVoSinh.Rows[i].Cells[5].Value.ToString();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                string stt = tb_STT.Text;
+                string tenvosinh = tb_TenVoSinh.Text;
+                string truong = tb_Truong.Text;
+                string sinhnhat = tb_SinhNhat.Text;
+                string capbac = tb_CapBac.Text;
+                string ngaythamgia = tb_NgayThamGia.Text;
+
+                if (VoSinhDAO.Instance.UpdateInfo(stt, tenvosinh, truong, sinhnhat, capbac, ngaythamgia))
+                {
+                    ShowData();
+                    MessageBox.Show("Sửa thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi Sửa");
+                }
+                
+            }
+            //return data;
+            dataVoSinh.DataSource = ShowData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                string stt = tb_STT.Text;
+
+                if (VoSinhDAO.Instance.DeleteInfo(stt))
+                {
+                    ShowData();
+                    MessageBox.Show("Xóa thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi Xóa");
+                }
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

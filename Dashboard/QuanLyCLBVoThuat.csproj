@@ -50,6 +50,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Data.SqlClient, Version=1.11.20045.2, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.SqlClient.1.1.1\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -228,10 +234,19 @@
     </Compile>
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\VoSinh.cs" />
+    <Compile Include="GUI\BM2_ExportPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BM2_ExportPrice.Designer.cs">
+      <DependentUpon>BM2_ExportPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\BM1_SetInfor.resx">
       <DependentUpon>BM1_SetInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BM2_ExportPrice.resx">
+      <DependentUpon>BM2_ExportPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BM2_InsertPrice.resx">
       <DependentUpon>BM2_InsertPrice.cs</DependentUpon>
