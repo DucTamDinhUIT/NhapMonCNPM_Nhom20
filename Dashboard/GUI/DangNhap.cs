@@ -54,5 +54,9 @@ namespace QuanLyCLBVoThuat
 
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

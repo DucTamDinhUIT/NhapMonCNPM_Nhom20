@@ -13,12 +13,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyright = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(626, 264);
+            this.button1.Location = new System.Drawing.Point(612, 305);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 0;
@@ -29,7 +30,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(482, 175);
+            this.label1.Location = new System.Drawing.Point(468, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
@@ -38,7 +39,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(482, 219);
+            this.label2.Location = new System.Drawing.Point(468, 260);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 2;
@@ -46,14 +47,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(563, 172);
+            this.textBox1.Location = new System.Drawing.Point(549, 213);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(563, 216);
+            this.textBox2.Location = new System.Drawing.Point(549, 257);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(237, 20);
             this.textBox2.TabIndex = 4;
@@ -73,7 +74,7 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(749, 264);
+            this.btnExit.Location = new System.Drawing.Point(735, 305);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 6;
@@ -84,12 +85,21 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(165, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(165, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 376);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 352);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // copyright
+            // 
+            this.copyright.AutoSize = true;
+            this.copyright.Location = new System.Drawing.Point(652, 436);
+            this.copyright.Name = "copyright";
+            this.copyright.Size = new System.Drawing.Size(182, 13);
+            this.copyright.TabIndex = 8;
+            this.copyright.Text = "Copyright: Đinh Đức Tâm - FKC 2021";
             // 
             // DangNhap
             // 
@@ -97,6 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 458);
+            this.Controls.Add(this.copyright);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
@@ -122,5 +133,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label copyright;
     }
 }
